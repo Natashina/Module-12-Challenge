@@ -12,4 +12,9 @@ BuildCharts function is used to build three charts. Some features were discovere
 Therefore a new variable "big-array" has been created. Push() has been applied to reorganize the data from an object into an array of key: value pairs. 
 Sort() method allowed all three key: values to be sorted at once. "Small_array" is a top 10 slice of "big_array".
 
+Map() method is used to build the parameters for Bubble Chart.
+The algorithm for colors was a challenging part.
+
+
+
 
