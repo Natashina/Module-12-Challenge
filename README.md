@@ -9,16 +9,7 @@ The belly button dashboard provides visualisation of the bacterial data for each
 The Demographics Info panel shows all the key-value pairs of the selected individual. Object.entries() JavaScript method is used to iterate through the keys and values of an object.
 
 BuildCharts function is used to build three charts. Some features were discovered, such as "result" variable is not an Array, it is an object.
-Therefore a new variable big-array has been created:
+Therefore a new variable "big-array" has been created. Push() has been applied to reorganize the data from an object into an array of key: value pairs. 
+Sort() method allowed all three key: values to be sorted at once. "Small_array" is a top 10 slice of "big_array".
 
 
-var big_array = [];
-
-    for(var i = 0; i < result[0].sample_values.length; i++){
-        big_array.push({
-          otu_ids: result[0].otu_ids[i],
-          sample_values: result[0].sample_values[i],
-          otu_labels: result[0].otu_labels[i]
-        }); 
-
-sort() function 
