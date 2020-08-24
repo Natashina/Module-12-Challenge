@@ -1,6 +1,6 @@
 ## Module-12-Challenge
 
-The belly button dashboard provides visualisation the bacterial data for each volunteer and includes the following:
+The belly button dashboard provides visualisation of the bacterial data for each volunteer and includes the following:
   1) a panel for demographic information,
   2) a bar chart of the top ten bacterial species (OTUs) in a volunteer’s navel, 
   3) a bubble chart to visualize the relative frequency of all the bacterial species,
