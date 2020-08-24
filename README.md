@@ -16,8 +16,8 @@ Map() method is used to build the parameters for Bubble Chart.
 The algorithm for colors was a challenging part.
 
 There were two challenges in buiding the gauge.
-1. Plotly documentation refered to in the Module Challenge instructions describes an "indicator" type, while the correct type for this gauge is "pie".
-2. 
+- Plotly documentation refered to in the Module Challenge instructions describes an "indicator" type, while the correct type for this gauge is "pie".
+- Plotly does not offer documentation on how to create a gauge needle. That is why the only source of information was online examples.
 
 
 
