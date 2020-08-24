@@ -1,27 +1,3 @@
-d3.json("samples.json").then(function(data){
-  console.log(data);
-});
-d3.json("samples.json").then(function(data){
-  wfreq = data.metadata.map(person => person.wfreq);
-  console.log(wfreq);
-});
-d3.json("samples.json").then(function(data){
-  wfreq = data.metadata.map(person =>
-person.wfreq).sort((a,b) => b - a);
-  console.log(wfreq);
-});
-d3.json("samples.json").then(function(data){
-  wfreq = data.metadata.map(person =>
-person.wfreq).sort((a,b) => b - a);
-  filteredWfreq = wfreq.filter(element => element !=
-null);
-  console.log(filteredWfreq);
-});
-d3.json("samples.json").then(function(data){
-  firstPerson = data.metadata[0];
-  Object.entries(firstPerson).forEach(([key, value]) =>
-    {console.log(key + ': ' + value);});
-});
 // the code that creates a dropdown menu of ID numbers dynamically
 function init() {
   var selector = d3.select("#selDataset");
@@ -44,17 +20,6 @@ function optionChanged(newSample) {
   buildCharts(newSample);
 }
 
-/*function buildMetadata(sample) {
-  d3.json("samples.json").then((data) => {
-    var metadata = data.metadata;
-    var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
-    var result = resultArray[0];
-    var PANEL = d3.select("#sample-metadata");
-
-    PANEL.html("");
-    PANEL.append("h6").text(result.location);
-  });
-}*/
 
 function buildMetadata(sample) {
   d3.json("samples.json").then((data) => {
@@ -115,19 +80,15 @@ function buildCharts(sample) {
       y: big_array.map(row => row.sample_values),
       text: big_array.map(row => row.otu_labels),
       mode: 'markers',
-      marker: {
- //        color: big_array.map(row => 'rgb(255,144,14)'),
+      marker: {      
          color: big_array.map(row => 'rgb('+(row.otu_ids)%256+','+(row.otu_ids>>4)%256+','+(row.otu_ids>>8)%256+')'),
          size: big_array.map(row => row.sample_values*.7)
       }
       
-      //type: "bubble"
      
     };
-    console.log(traceb);
-    // data
-    //var result = [trace];
-
+    
+    
     // Apply the group bar mode to the layout
     var layoutb = {
       title: "",
@@ -149,12 +110,7 @@ function buildCharts(sample) {
       var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
       var result = resultArray[0];
       console.log("Gauge", result);
-      var traceg = [ {      
-        //domain: { 
-        //  x: [0, 1], 
-        //  y: [0, 1] },
-        //value: result.wfreq,
-        //title: { text: "Belly Button Washing Frequency<br>Scrubs per week" },
+      var traceg = [ { 
         type: "pie",
         showlegend: false,
         hole: 0.4,
@@ -171,21 +127,15 @@ function buildCharts(sample) {
                    'rgba(127,180,133,1)','white'],
           labels: ['0-1','1-2','2-3','3-4','4-5','5-6','6-7','7-8','8-9'],
           hoverinfo: 'label'
-        }/*,
-        gauge: {
-          axis: { range: [null, 9] },
-          steps: [
-            { range: [0, 4], color: "lightgreen" },
-            { range: [4, 9], color: "green" }
-          ],
-        }*/
+        }
       } ];
 
     
-  var degrees = 50, radius = .9;
+  var degrees = result.wfreq*20, radius = 0.4;
   var radians = degrees * Math.PI / 180;
-  var x1 = 1 * radius * Math.cos(radians) * result.wfreq;
-  var y1 = radius * Math.sin(radians);
+  var x0 = 0.5, y0 = 0.5;
+  var x1 = x0-radius*Math.cos(radians)
+  var y1 = y0+radius*Math.sin(radians);
   console.log(x1,y1);
 
   var layoutg = {
@@ -195,12 +145,12 @@ function buildCharts(sample) {
     title: "Belly Button Washing Frequency<br>Scrubs per week",
     shapes: [{
       type: 'line',
-      x0: 0.5,
-      y0: 0.5,
+      x0: x0,
+      y0: y0,
       x1: x1,
       y1: y1,
       line: {
-        color: 'red',
+        color: 'blue',
         width: 5
       }
     }]
