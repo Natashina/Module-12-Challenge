@@ -15,6 +15,9 @@ Sort() method allowed all three key: values to be sorted at once. "Small_array" 
 Map() method is used to build the parameters for Bubble Chart.
 The algorithm for colors was a challenging part.
 
+There were two challenges in buiding the gauge.
+1. Plotly documentation refered to in the Module Challenge instructions describes an "indicator" type, while the correct type for this gauge is "pie".
+2. 
 
 
 
