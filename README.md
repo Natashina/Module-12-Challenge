@@ -8,8 +8,8 @@ The belly button dashboard provides visualisation the bacterial data for each vo
 
 The Demographics Info panel shows all the key-value pairs of the selected individual. Object.entries() JavaScript method is used to iterate through the keys and values of an object.
 
-BuildCharts function is used to build three charts. Some features were discovered, such as "result" variable is not an Array.
-Therefore a new variables has been created 
+BuildCharts function is used to build three charts. Some features were discovered, such as "result" variable is not an Array, it is an object.
+Therefore a new variable big-array has been created:
 
 
 var big_array = [];
@@ -21,3 +21,4 @@ var big_array = [];
           otu_labels: result[0].otu_labels[i]
         }); 
 
+sort() function 
