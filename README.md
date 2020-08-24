@@ -11,7 +11,9 @@ The Demographics Info panel shows all the key-value pairs of the selected indivi
 BuildCharts function is used to build three charts. Some features were discovered, such as "result" variable is not an Array.
 Therefore a new variables has been created 
 
+
 var big_array = [];
+
     for(var i = 0; i < result[0].sample_values.length; i++){
         big_array.push({
           otu_ids: result[0].otu_ids[i],
